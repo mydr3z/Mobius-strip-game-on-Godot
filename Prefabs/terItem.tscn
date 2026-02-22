@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlwpsscctm24w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8sdl2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2mg7"]
+albedo_color = Color(0.552941, 0.458824, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jvqmg"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1ah5"]
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 1, 0, 1)
+
+[node name="TerItem" type="Node3D"]
+
+[node name="body" type="StaticBody3D" parent="."]
+transform = Transform3D(-5.24537e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.24537e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="body"]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("BoxShape3D_8sdl2")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="body"]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_o2mg7")
+
+[node name="redb1" type="CSGBox3D" parent="body"]
+transform = Transform3D(0.1, 0, 0, 0, 0.12, 0, 0, 0, 0.12, -4.5, 0, 0)
+material_override = SubResource("StandardMaterial3D_jvqmg")
+
+[node name="redb2" type="CSGBox3D" parent="body"]
+transform = Transform3D(0.1, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 4.5, 0, 0)
+material_override = SubResource("StandardMaterial3D_jvqmg")
+
+[node name="yelb1" type="CSGBox3D" parent="body"]
+transform = Transform3D(0.1, 0, 0, 0, 0.12, 0, 0, 0, 0.12, 4.2, 0, 0)
+material_override = SubResource("StandardMaterial3D_a1ah5")
+
+[node name="yelb2" type="CSGBox3D" parent="body"]
+transform = Transform3D(0.1, 0, 0, 0, 0.12, 0, 0, 0, 0.12, -4.2, 0, 0)
+material_override = SubResource("StandardMaterial3D_a1ah5")

@@ -15,7 +15,7 @@ var _horizontal_input:float;
 var _vertical_input:float;
 
 
-func _init(init_character:FirstPersonController, init_stateMachine:PlayerStateMachine):
+func _init(init_character:FirstPersonController, init_stateMachine:PlayerStateMachine)->void:
 	self.character = init_character
 	self.state_machine = init_stateMachine
 

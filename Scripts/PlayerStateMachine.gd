@@ -2,7 +2,7 @@ extends Node
 
 class_name PlayerStateMachine
 
-var _current_state:PlayerState
+var _current_state:PlayerState;
 
 
 func initialize(startingState:PlayerState)->void:

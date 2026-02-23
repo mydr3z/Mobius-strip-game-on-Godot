@@ -2,19 +2,19 @@ extends Node
 
 class_name PlayerStateMachine
 
-var _currentState:PlayerState
+var _current_state:PlayerState
 
 
 func initialize(startingState:PlayerState):
-	_currentState = startingState;
+	_current_state = startingState;
 	startingState.enter();
 
 
 func change_state(newState:PlayerState):
-	_currentState.exit();
-	_currentState = newState;
+	_current_state.exit();
+	_current_state = newState;
 	newState.enter();
 
 
 func get_state()->PlayerState:
-	return _currentState;
+	return _current_state;

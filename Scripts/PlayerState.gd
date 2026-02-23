@@ -3,12 +3,12 @@ class_name PlayerState
 extends Node
 
 var character:FirstPersonController
-var stateMachine:PlayerStateMachine
+var state_machine:PlayerStateMachine
 
 
 func _init(init_character:FirstPersonController, init_stateMachine:PlayerStateMachine):
 	self.character = init_character
-	self.stateMachine = init_stateMachine
+	self.state_machine = init_stateMachine
 
 
 func enter():

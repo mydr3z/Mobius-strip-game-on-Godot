@@ -5,9 +5,9 @@ class_name OuterSpaceState
 var _horizontal_input:float;
 var _vertical_input:float;
 
-func _init(init_character:FirstPersonController, init_stateMachine:PlayerStateMachine):
+func _init(init_character:FirstPersonController, init_state_machine:PlayerStateMachine):
 	self.character = init_character
-	self.stateMachine = init_stateMachine
+	self.state_machine = init_state_machine
 
 
 func enter()->void:
@@ -34,8 +34,8 @@ func move_update()->void:
 	
 	if !WorldPhysics.is_in_outer_space(character.get_position()):
 		if WorldPhysics.get_depth(character.get_position()) < 0.0:
-			stateMachine.change_state(character.get_state(FirstPersonController.State.WALKING));
+			state_machine.change_state(character.get_state(FirstPersonController.State.WALKING));
 		
 		else: 
-			stateMachine.change_state(character.get_state(FirstPersonController.State.INNER_FLYING));
+			state_machine.change_state(character.get_state(FirstPersonController.State.INNER_FLYING));
 	character.rotate_head();

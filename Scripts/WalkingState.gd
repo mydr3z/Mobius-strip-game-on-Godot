@@ -17,7 +17,7 @@ var _vertical_input:float;
 
 func _init(init_character:FirstPersonController, init_stateMachine:PlayerStateMachine):
 	self.character = init_character
-	self.stateMachine = init_stateMachine
+	self.state_machine = init_stateMachine
 
 
 func enter()->void:
@@ -65,9 +65,9 @@ func move_update()->void:
 	character.move_body(_acceleration);
 	
 	if WorldPhysics.is_in_outer_space(character.get_pos()):
-		stateMachine.change_state(character.get_state(FirstPersonController.State.OUTER_FLYING));
+		state_machine.change_state(character.get_state(FirstPersonController.State.OUTER_FLYING));
 	
 	elif WorldPhysics.get_depth(character.get_pos()) < 0.0:
-		stateMachine.change_state(character.get_state(FirstPersonController.State.INNER_FLYING));
+		state_machine.change_state(character.get_state(FirstPersonController.State.INNER_FLYING));
 	
 	character.rotate_head(_GRAVITY_SMOOTH);
